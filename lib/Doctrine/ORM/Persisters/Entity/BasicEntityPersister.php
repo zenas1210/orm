@@ -1404,7 +1404,7 @@ class BasicEntityPersister implements EntityPersister
         $columns = implode(', ', $columns);
         $values  = implode(', ', $values);
 
-        $this->insertSql = sprintf('INSERT INTO %s (%s) VALUES (%s)', $tableName, $columns, $values);
+        $this->insertSql = sprintf('INSERT IGNORE INTO %s (%s) VALUES (%s)', $tableName, $columns, $values);
 
         return $this->insertSql;
     }
